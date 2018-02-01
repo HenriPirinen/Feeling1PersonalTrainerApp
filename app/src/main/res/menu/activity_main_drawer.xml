@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="Profiili" />
+        <item
+            android:id="@+id/nav_exercise"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:title="Harjoitukset" />
+        <item
+            android:id="@+id/nav_stretching"
+            android:icon="@android:drawable/ic_btn_speak_now"
+            android:title="Venyttely" />
+        <item
+            android:id="@+id/nav_diary"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Päiväkirja" />
+        <item
+            android:id="@+id/nav_catalog"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Laitteet" />
+        <item
+            android:id="@+id/nav_scan"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="QR-skannaus" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@android:drawable/sym_contact_card"
+            android:title="Yhteystiedot" />
+    </group>
+
+</menu>

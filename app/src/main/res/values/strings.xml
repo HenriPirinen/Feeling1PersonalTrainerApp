@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Feeling 1: Personal Trainer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="background_image">background</string>
+    <string name="action_settings">Settings</string>
+    <string name="profile_weight">Paino</string>
+    <string name="profile_height">Pituus</string>
+</resources>
