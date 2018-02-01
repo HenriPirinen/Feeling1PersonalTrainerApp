@@ -36,7 +36,6 @@ public class Fragment_exercise extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //TODO Recycler for fragment
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewList);
         mAdapter = new ListAdapter(exerciseList);
