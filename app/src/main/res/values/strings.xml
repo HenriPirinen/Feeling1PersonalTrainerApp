@@ -7,4 +7,13 @@
     <string name="action_settings">Settings</string>
     <string name="profile_weight">Paino</string>
     <string name="profile_height">Pituus</string>
+    <string name="exercise_0">TXT 1 </string>
+    <string name="exercise_1">TXT 2</string>
+    <string name="default_text">Default</string>
+    <string name="smith_description">Smith-laite on kuntosalilaite, jossa levytanko liikkuu ylös ja alas kiskojen varassa.
+        Sillä voidaan suorittaa samoja liikkeitä kuin vapaalla levytangollakin, esimerkiksi jalkakyykky ja penkkipunnerrus.
+        Joidenkin liikkeiden, kuten hauiskäännön suorittamiseen laite ei kuitenkaan sovellu. \n
+        Smith-laitteen käyttö on aloittelijalle usein helpompaa kuin vapaalla tangolla harjoittelu.
+        Pidemmälle ehtineet voimailijat pitävät kuitenkin usein vapaalla tangolla tehtyjä liikkeitä parempina,
+        sillä ne kehittävät paremmin koordinaatiota, ja niissä tangon liikerata on luonnollisempi.</string>
 </resources>
