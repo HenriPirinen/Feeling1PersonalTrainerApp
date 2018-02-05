@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Feeling 1: Personal Trainer</string>
-
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="background_image">background</string>
@@ -16,4 +15,6 @@
         Smith-laitteen käyttö on aloittelijalle usein helpompaa kuin vapaalla tangolla harjoittelu.
         Pidemmälle ehtineet voimailijat pitävät kuitenkin usein vapaalla tangolla tehtyjä liikkeitä parempina,
         sillä ne kehittävät paremmin koordinaatiota, ja niissä tangon liikerata on luonnollisempi.</string>
+    <string name="soutulaite_description">Soutulaite on kuntoilulaite, jolla voi harjoittaa aerobista kuntoa, sekä lihasten, lähinnä selän ja hauisten kestävyyttä. Soutulaitteet ovat yleisiä kuntosaleilla ja niitä on myös kotikäytössä.
+        Samanlaista soutuliikettä kuin soutulaitteessa voi harjoittaa myös alataljassa. Tällöin kuitenkin käytetään yleensä raskaita painoja ja tavoitellaan lihasten massan ja voiman kehitystä.</string>
 </resources>
