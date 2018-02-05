@@ -83,19 +83,19 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_exercise) {
             fragment = new Fragment_exercise();
         } else if (id == R.id.nav_stretching) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            /*Intent profileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(profileIntent);*/
         } else if (id == R.id.nav_catalog){
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            /*Intent profileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(profileIntent);*/
         } else if (id == R.id.nav_contact) {
             fragment = new FragmentContact();
         } else if (id == R.id.nav_diary) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            /*Intent profileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(profileIntent);*/
         } else if (id == R.id.nav_scan) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            /*Intent profileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(profileIntent);*/
         }
 
         if(fragment != null)

@@ -114,4 +114,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4"
         app:layout_constraintVertical_bias="0.545" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TODO \n Näytä statiikkaa \n esim. http://www.android-graphview.org/ \n Appi pyytää vaikka notificaatioilla \n käyttäjää täydentämään päiväkirjaa \n Näistä tiedoista luodaan diagrammi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnApply"
+        app:layout_constraintVertical_bias="0.094" />
 </android.support.constraint.ConstraintLayout>
