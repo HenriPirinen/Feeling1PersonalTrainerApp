@@ -17,8 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +27,17 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        FragmentSplashScreen splashScreen = new FragmentSplashScreen();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .add(R.id.fragmentArea, splashScreen).commit();
     }
 
     @Override
@@ -44,8 +47,6 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
-            //comment
-            //Test comment
         }
     }
 
@@ -74,7 +75,6 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         Fragment fragment = null;
         int id = item.getItemId();
 
@@ -83,18 +83,14 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_exercise) {
             fragment = new Fragment_exercise();
         } else if (id == R.id.nav_stretching) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            /*Intent profileIntent = new Intent(this, ProfileActivity.class);
+            startActivity(profileIntent);*/
         } else if (id == R.id.nav_catalog){
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
+            fragment = new FragmentCatalog();
         } else if (id == R.id.nav_contact) {
             fragment = new FragmentContact();
-        } else if (id == R.id.nav_diary) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
-            startActivity(profileIntent);
         } else if (id == R.id.nav_scan) {
-            Intent profileIntent = new Intent(this, ProfileActivity.class);
+            Intent profileIntent = new Intent(this, ActivityReadQR.class);
             startActivity(profileIntent);
         }
 

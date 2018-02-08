@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="year">#999999</color><!--New-->
     <color name="title">#222222</color><!--New-->
+    <color name="feelingBlue">#b2cfff</color>
 </resources>
