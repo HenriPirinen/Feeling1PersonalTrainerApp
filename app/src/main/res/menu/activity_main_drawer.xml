@@ -17,10 +17,6 @@
             android:icon="@android:drawable/ic_btn_speak_now"
             android:title="Venyttely" />
         <item
-            android:id="@+id/nav_diary"
-            android:icon="@android:drawable/ic_menu_my_calendar"
-            android:title="Päiväkirja" />
-        <item
             android:id="@+id/nav_catalog"
             android:icon="@drawable/ic_menu_manage"
             android:title="Laitteet" />
