@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -33,33 +34,49 @@ public class FragmentProfile extends Fragment {
 
             }
         });*/
+
         GraphView graph = (GraphView) view.findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, 70),
-                new DataPoint(1, 68),
-                new DataPoint(2, 66),
-                new DataPoint(3, 64),
-                new DataPoint(4, 68),
-                new DataPoint(5, 66),
-                new DataPoint(6, 64),
-                new DataPoint(7, 68),
-                new DataPoint(8, 66)
-        });
+        DataPoint[] points = new DataPoint[100];
+        for (int i = 0; i < points.length; i++) {
+            points[i] = new DataPoint(i, 100-i*(Math.random()*1));
+        }
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points);
+
+        // set manual X bounds
+        graph.getViewport().setYAxisBoundsManual(true);
+        graph.getViewport().setMinY(0);
+        graph.getViewport().setMaxY(150);
+
+        graph.getViewport().setXAxisBoundsManual(true);
+        graph.getViewport().setMinX(4);
+        graph.getViewport().setMaxX(80);
+
+        // enable scaling and scrolling
+        graph.getViewport().setScalable(true);
+        graph.getViewport().setScalableY(true);
+
         graph.addSeries(series);
 
         GraphView graphActivity = (GraphView) view.findViewById(R.id.activity);
-        LineGraphSeries<DataPoint> values = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, 2),
-                new DataPoint(1, 0),
-                new DataPoint(2, 0),
-                new DataPoint(3, 3),
-                new DataPoint(4, 1),
-                new DataPoint(5, 0),
-                new DataPoint(6, 0),
-                new DataPoint(7, 0),
-                new DataPoint(8, 2)
-        });
-        graphActivity.addSeries(values);
+        DataPoint[] activityPoints = new DataPoint[60];
+        for (int i = 0; i < activityPoints.length; i++){
+            activityPoints[i] = new DataPoint(i, Math.random()*8);
+        }
+        BarGraphSeries<DataPoint> values = new BarGraphSeries<>(activityPoints);
 
+        graphActivity.getViewport().setYAxisBoundsManual(true);
+        graphActivity.getViewport().setMinY(0);
+        graphActivity.getViewport().setMaxY(8);
+
+        graphActivity.getViewport().setXAxisBoundsManual(true);
+        graphActivity.getViewport().setMinX(0);
+        graphActivity.getViewport().setMaxX(31);
+
+        // enable scaling and scrolling
+        graphActivity.getViewport().setScalable(true);
+        graphActivity.getViewport().setScalableY(true);
+
+        values.setSpacing(25);
+        graphActivity.addSeries(values);
     }
 }
