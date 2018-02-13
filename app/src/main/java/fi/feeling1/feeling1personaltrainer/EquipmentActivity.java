@@ -3,6 +3,7 @@ package fi.feeling1.feeling1personaltrainer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 /**
@@ -22,6 +23,8 @@ public class EquipmentActivity extends AppCompatActivity {
         desc = findViewById(R.id.equipmentDesc);
         content = getIntent().getStringExtra("content");
         getSupportActionBar().setTitle(content);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         switch (content) {
             case "Smith-laite":
@@ -34,5 +37,16 @@ public class EquipmentActivity extends AppCompatActivity {
                 desc.setText(getString(R.string.smith_description));
                 break;
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == android.R.id.home)
+        {
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
