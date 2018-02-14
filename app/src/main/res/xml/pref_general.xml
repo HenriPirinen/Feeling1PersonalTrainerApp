@@ -31,8 +31,14 @@
         android:defaultValue="1"
         android:entries="@array/pref_genders"
         android:entryValues="@array/pref_genders"
-        android:key="list_preference_1"
+        android:key="key_gender"
         android:title="Sukupuoli" />
+    <EditTextPreference
+        android:defaultValue="Default value"
+        android:key="edit_text_preference_2"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Edit text preference" />
     <ListPreference
         android:defaultValue="-1"
         android:entries="@array/pref_example_list_titles"

@@ -43,7 +43,6 @@ public class ExerciseActivity extends AppCompatActivity{
         {
             this.finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

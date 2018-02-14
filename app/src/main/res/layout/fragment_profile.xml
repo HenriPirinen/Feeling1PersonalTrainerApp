@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text|textPersonName"
-                android:text="80" />
+                android:text="0" />
 
             <TextView
                 android:id="@+id/txtHeight"
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="180" />
+                android:text="0" />
 
             <TextView
                 android:id="@+id/txtWaist"
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="70" />
+                android:text="0" />
 
             <TextView
                 android:id="@+id/txtHip"
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="75" />
+                android:text="0" />
 
             <TextView
                 android:id="@+id/txtNeck"
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="30" />
+                android:text="0" />
 
             <Button
                 android:id="@+id/btnUpdateProfile"

@@ -15,7 +15,17 @@
     <string name="profile_age">Syntymäpäivä (päivä.kuukausi.vuosi)</string>
     <string name="exercise_0">TXT 1, TXT 1, TXT 1, TXT 1, TXT 1</string>
     <string name="exercise_1">TXT 2, TXT 2, TXT 2, TXT 2, TXT 2</string>
+    <string name="profile_email">Sähköposti</string>
+
     <string name="default_text">Default</string>
+    <string name="default_integer">5</string>
+
+    <string name="profile_weight_value">1</string>
+    <string name="profile_height_value">2</string>
+    <string name="profile_waist_value">3</string>
+    <string name="profile_hip_value">4</string>
+    <string name="profile_neck_value">5</string>
+
     <string name="smith_description">Smith-laite on kuntosalilaite, jossa levytanko liikkuu ylös ja alas kiskojen varassa.
         Sillä voidaan suorittaa samoja liikkeitä kuin vapaalla levytangollakin, esimerkiksi jalkakyykky ja penkkipunnerrus.
         Joidenkin liikkeiden, kuten hauiskäännön suorittamiseen laite ei kuitenkaan sovellu. \n

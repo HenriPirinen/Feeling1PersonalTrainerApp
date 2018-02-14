@@ -1,11 +1,15 @@
 package fi.feeling1.feeling1personaltrainer;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.BarGraphSeries;
@@ -17,6 +21,19 @@ import com.jjoe64.graphview.series.LineGraphSeries;
  */
 
 public class FragmentProfile extends Fragment {
+
+    EditText weightInput;
+    EditText heightInput;
+    EditText waistInput;
+    EditText hipInput;
+    EditText neckInput;
+    int weight;
+    int height;
+    int waist;
+    int hip;
+    int neck;
+    Context context;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,13 +44,15 @@ public class FragmentProfile extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        context = getContext();
+        weightInput = (EditText) view.findViewById(R.id.inputWeight);
+        heightInput = (EditText) view.findViewById(R.id.inputHeight);
+        waistInput = (EditText) view.findViewById(R.id.inputWaist);
+        hipInput = (EditText) view.findViewById(R.id.inputHip);
+        neckInput = (EditText) view.findViewById(R.id.inputNeck);
 
-        /*view.findViewById(R.id.btnApply).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });*/
+        updateView("null");
 
         GraphView graph = (GraphView) view.findViewById(R.id.graph);
         DataPoint[] points = new DataPoint[100];
@@ -78,5 +97,40 @@ public class FragmentProfile extends Fragment {
 
         values.setSpacing(25);
         graphActivity.addSeries(values);
+
+        view.findViewById(R.id.btnUpdateProfile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateView("update");
+            }
+        });
+    }
+
+    public void updateView(String function)
+    {
+        final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+
+        if(function.equals("update")) {
+            weight = Integer.parseInt(weightInput.getText().toString());
+            height = Integer.parseInt(heightInput.getText().toString());
+            waist = Integer.parseInt(waistInput.getText().toString());
+            hip = Integer.parseInt(hipInput.getText().toString());
+            neck = Integer.parseInt(neckInput.getText().toString());
+
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt(getString(R.string.profile_height_value), height);
+            editor.putInt(getString(R.string.profile_weight_value), weight);
+            editor.putInt(getString(R.string.profile_hip_value), hip);
+            editor.putInt(getString(R.string.profile_waist_value), waist);
+            editor.putInt(getString(R.string.profile_neck_value), neck);
+            editor.apply();
+            Toast.makeText(context, "Päivitetty", Toast.LENGTH_LONG).show();
+        }
+
+        weightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_weight_value), 0)));
+        heightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_height_value), 0)));
+        waistInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_waist_value), 0)));
+        neckInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_neck_value), 0)));
+        hipInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_hip_value), 0)));
     }
 }
