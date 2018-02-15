@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Declare default values -->
+    <integer name="default_profile_weight">0</integer>
+    <integer name="default_profile_height">0</integer>
+    <integer name="default_profile_age">0</integer>
+
+    <!-- Saved values -->
+    <integer name="profile_weight">0</integer>
+    <integer name="profile_height">0</integer>
+    <integer name="profile_age">0</integer>
+</resources>
