@@ -34,6 +34,11 @@ public class FragmentProfile extends Fragment {
     int neck;
     Context context;
 
+    int counter = 100;
+
+    private BarGraphSeries<DataPoint> activityMeter;
+    private LineGraphSeries<DataPoint> weightMeter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -50,16 +55,12 @@ public class FragmentProfile extends Fragment {
         waistInput = (EditText) view.findViewById(R.id.inputWaist);
         hipInput = (EditText) view.findViewById(R.id.inputHip);
         neckInput = (EditText) view.findViewById(R.id.inputNeck);
-
+        GraphView graph = (GraphView) view.findViewById(R.id.graph);
+        GraphView graphActivity = (GraphView) view.findViewById(R.id.activity);
 
         updateView("null");
 
-        GraphView graph = (GraphView) view.findViewById(R.id.graph);
-        DataPoint[] points = new DataPoint[100];
-        for (int i = 0; i < points.length; i++) {
-            points[i] = new DataPoint(i, 100-i*(Math.random()*1));
-        }
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(points);
+        weightMeter = new LineGraphSeries<>(generateData("weight"));
 
         // set manual X bounds
         graph.getViewport().setYAxisBoundsManual(true);
@@ -74,14 +75,9 @@ public class FragmentProfile extends Fragment {
         graph.getViewport().setScalable(true);
         graph.getViewport().setScalableY(true);
 
-        graph.addSeries(series);
+        graph.addSeries(weightMeter);
 
-        GraphView graphActivity = (GraphView) view.findViewById(R.id.activity);
-        DataPoint[] activityPoints = new DataPoint[60];
-        for (int i = 0; i < activityPoints.length; i++){
-            activityPoints[i] = new DataPoint(i, Math.random()*8);
-        }
-        BarGraphSeries<DataPoint> values = new BarGraphSeries<>(activityPoints);
+        activityMeter = new BarGraphSeries<>(generateData("activity"));
 
         graphActivity.getViewport().setYAxisBoundsManual(true);
         graphActivity.getViewport().setMinY(0);
@@ -95,8 +91,8 @@ public class FragmentProfile extends Fragment {
         graphActivity.getViewport().setScalable(true);
         graphActivity.getViewport().setScalableY(true);
 
-        values.setSpacing(25);
-        graphActivity.addSeries(values);
+        activityMeter.setSpacing(35);
+        graphActivity.addSeries(activityMeter);
 
         view.findViewById(R.id.btnUpdateProfile).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,13 +120,44 @@ public class FragmentProfile extends Fragment {
             editor.putInt(getString(R.string.profile_waist_value), waist);
             editor.putInt(getString(R.string.profile_neck_value), neck);
             editor.apply();
+
+            counter++;
+
+            //activityMeter.resetData(generateData("activity"));
+            //weightMeter.resetData(generateData("weight"));
+            weightMeter.appendData(new DataPoint(counter, weight),true,100);
+
             Toast.makeText(context, "Päivitetty", Toast.LENGTH_LONG).show();
         }
 
-        weightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_weight_value), 0)));
+        weightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_weight_value),0)));
         heightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_height_value), 0)));
         waistInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_waist_value), 0)));
         neckInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_neck_value), 0)));
         hipInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_hip_value), 0)));
+    }
+
+    private DataPoint[] generateData(String graph)
+    {
+        DataPoint[] newData;
+        switch (graph){
+            case "activity":
+                newData = new DataPoint[60];
+                for (int i = 0; i < newData.length; i++) { //Placeholder
+                    newData[i] = new DataPoint(i, Math.random() * 8);
+                }
+                break;
+
+            case "weight":
+                newData = new DataPoint[100];
+                for (int i = 0; i < newData.length; i++) { //Placeholder
+                    newData[i] = new DataPoint(i, 100-i*(Math.random()*1));
+                }
+                break;
+            default:
+                newData = new DataPoint[10];
+                break;
+        }
+        return newData;
     }
 }
