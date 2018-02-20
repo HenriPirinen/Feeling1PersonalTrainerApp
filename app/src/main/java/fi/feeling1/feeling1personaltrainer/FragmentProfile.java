@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.BarGraphSeries;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Henri Pirinen on 1/29/2018.
@@ -38,11 +42,16 @@ public class FragmentProfile extends Fragment {
 
     private BarGraphSeries<DataPoint> activityMeter;
     private LineGraphSeries<DataPoint> weightMeter;
+    List<String> weightData = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //return super.onCreateView(inflater, container, savedInstanceState);
+        for(int i = 0; i < 100; i++)
+        {
+            weightData.add("20");
+        }
         return inflater.inflate(R.layout.fragment_profile, null);
     }
 
@@ -60,12 +69,12 @@ public class FragmentProfile extends Fragment {
 
         updateView("null");
 
-        weightMeter = new LineGraphSeries<>(generateData("weight"));
+        weightMeter = new LineGraphSeries<>(loadData("weight"));
 
         // set manual X bounds
         graph.getViewport().setYAxisBoundsManual(true);
         graph.getViewport().setMinY(0);
-        graph.getViewport().setMaxY(150);
+        graph.getViewport().setMaxY(40);
 
         graph.getViewport().setXAxisBoundsManual(true);
         graph.getViewport().setMinX(4);
@@ -77,7 +86,7 @@ public class FragmentProfile extends Fragment {
 
         graph.addSeries(weightMeter);
 
-        activityMeter = new BarGraphSeries<>(generateData("activity"));
+        activityMeter = new BarGraphSeries<>(loadData("activity"));
 
         graphActivity.getViewport().setYAxisBoundsManual(true);
         graphActivity.getViewport().setMinY(0);
@@ -105,7 +114,7 @@ public class FragmentProfile extends Fragment {
     public void updateView(String function)
     {
         final SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-
+        counter++;
         if(function.equals("update")) {
             weight = Integer.parseInt(weightInput.getText().toString());
             height = Integer.parseInt(heightInput.getText().toString());
@@ -121,13 +130,11 @@ public class FragmentProfile extends Fragment {
             editor.putInt(getString(R.string.profile_neck_value), neck);
             editor.apply();
 
-            counter++;
-
-            //activityMeter.resetData(generateData("activity"));
-            //weightMeter.resetData(generateData("weight"));
-            weightMeter.appendData(new DataPoint(counter, weight),true,100);
+            //weightMeter.appendData(new DataPoint(counter, weight),true,100);
+            updateData("weight");
 
             Toast.makeText(context, "Päivitetty", Toast.LENGTH_LONG).show();
+
         }
 
         weightInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_weight_value),0)));
@@ -137,27 +144,75 @@ public class FragmentProfile extends Fragment {
         hipInput.setText(Integer.toString(sharedPref.getInt(getString(R.string.profile_hip_value), 0)));
     }
 
-    private DataPoint[] generateData(String graph)
+    private void updateData(String graph)
     {
-        DataPoint[] newData;
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("PREFS",0);
+        SharedPreferences.Editor editor = sharedPref.edit();
         switch (graph){
             case "activity":
-                newData = new DataPoint[60];
+                /*newData = new DataPoint[60];
                 for (int i = 0; i < newData.length; i++) { //Placeholder
                     newData[i] = new DataPoint(i, Math.random() * 8);
-                }
+                }*/
                 break;
 
             case "weight":
-                newData = new DataPoint[100];
-                for (int i = 0; i < newData.length; i++) { //Placeholder
-                    newData[i] = new DataPoint(i, 100-i*(Math.random()*1));
+                double heightToMeters = (double)height / 100;
+                double bmi = weight/(heightToMeters*heightToMeters);
+                Log.d("BMI", Double.toString(bmi));
+                weightMeter.appendData(new DataPoint(counter, bmi),true,100);
+                weightData.remove(0);
+                weightData.add(Double.toString(bmi));
+                StringBuilder stringBuilder = new StringBuilder();
+                for (String s : weightData)
+                {
+                    stringBuilder.append(s);
+                    stringBuilder.append(",");
+                }
+                editor.putString("weightData", stringBuilder.toString());
+                editor.apply();
+                break;
+            default:
+                //newData = new DataPoint[10];
+                break;
+        }
+    }
+
+    private DataPoint[] loadData(String graph)
+    {
+        DataPoint[] data;
+
+        switch (graph) {
+            case "activity":
+                data = new DataPoint[60];
+                for (int i = 0; i < data.length; i++) { //Placeholder
+                    data[i] = new DataPoint(i, Math.random() * 8);
+                }
+                break;
+            case "weight":
+                data = new DataPoint[100];
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("PREFS",0);
+                String dataString = sharedPref.getString("weightData", "");
+                String[] items = dataString.split(",");
+                for(int i = 0; i < items.length; i++)
+                {
+                    weightData.remove(0);
+                    weightData.add(items[i]);
+                }
+                for(int i = 0; i < weightData.size(); i++)
+                {
+                    if(weightData.get(i).equals(""))
+                    {
+                        data[i] = new DataPoint(i, 20);
+                    } else {
+                        data[i] = new DataPoint(i, Double.parseDouble(weightData.get(i)));
+                    }
                 }
                 break;
             default:
-                newData = new DataPoint[10];
+                data = new DataPoint[10];
                 break;
         }
-        return newData;
+        return data;
     }
 }

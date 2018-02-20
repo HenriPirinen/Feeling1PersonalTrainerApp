@@ -6,7 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="profile_weight">Paino (kg)</string>
     <string name="profile_height">Pituus (cm)</string>
-    <string name="profile_weight_progress">Painon kehitys</string>
+    <string name="profile_weight_progress">Paino indeksi</string>
     <string name="profile_gender">Sukupuoli</string>
     <string name="profile_waist">Vyötärön leveys (cm)</string>
     <string name="profile_hip">Lantio leveys (cm)</string>

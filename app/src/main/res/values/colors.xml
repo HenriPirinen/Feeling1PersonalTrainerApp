@@ -6,4 +6,5 @@
     <color name="year">#999999</color><!--New-->
     <color name="title">#222222</color><!--New-->
     <color name="feelingBlue">#b2cfff</color>
+    <color name="text_background">#dce0e8</color>
 </resources>
