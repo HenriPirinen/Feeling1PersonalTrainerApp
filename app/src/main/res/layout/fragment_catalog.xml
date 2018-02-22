@@ -9,5 +9,6 @@
     android:horizontalSpacing="16dp"
     android:padding="16dp"
     android:stretchMode="columnWidth"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/activity_background">
 </GridView>
