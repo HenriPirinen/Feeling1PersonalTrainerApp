@@ -15,6 +15,8 @@ public class EquipmentActivity extends AppCompatActivity {
     TextView desc;
     String content;
 
+    //https://www.loopwiki.com/application/embed-youtube-video-in-android-app/
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

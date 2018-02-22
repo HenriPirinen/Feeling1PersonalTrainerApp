@@ -11,7 +11,11 @@ import android.widget.TextView;
  */
 
 public class ExerciseActivity extends AppCompatActivity{
-    TextView exerciseTxt;
+    TextView txtChapter_1;
+    TextView txtChapter_2;
+    TextView txtChapter_3;
+    TextView txtChapter_4;
+    TextView txtChapter_5;
     String content;
 
     @Override
@@ -19,19 +23,19 @@ public class ExerciseActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise);
 
-        exerciseTxt = findViewById(R.id.exerciseTxt);
+        txtChapter_1 = findViewById(R.id.exerciseChapter_1);
         content = getIntent().getStringExtra("content");
 
         getSupportActionBar().setTitle(content);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        if(content.equals("Harjoitus 1")) {
-            exerciseTxt.setText(getString(R.string.exercise_0));
-        } else if(content.equals("Harjoitus 2")) {
-            exerciseTxt.setText(getString(R.string.exercise_1));
+        if(content.equals("Perusohjelma aloittelijalle")) {
+            txtChapter_1.setText(getString(R.string.exercise_0));
+        } else if(content.equals("Alavartalon kuntosaliohjelma")) {
+            txtChapter_1.setText(getString(R.string.exercise_1));
         } else {
-            exerciseTxt.setText(getString(R.string.exercise_1));
+            txtChapter_1.setText(getString(R.string.exercise_1));
         }
     }
 

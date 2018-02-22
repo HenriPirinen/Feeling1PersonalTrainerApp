@@ -47,10 +47,6 @@
                 android:text="@string/smith_description"
                 android:textSize="16sp" />
 
-            <VideoView
-                android:id="@+id/equipmentVid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -13,8 +13,66 @@
     <string name="profile_neck">Kaula leveys (cm)</string>
     <string name="profile_update">Päivitä profiili</string>
     <string name="profile_age">Syntymäpäivä (päivä.kuukausi.vuosi)</string>
-    <string name="exercise_0">TXT 1, TXT 1, TXT 1, TXT 1, TXT 1</string>
-    <string name="exercise_1">TXT 2, TXT 2, TXT 2, TXT 2, TXT 2</string>
+    <string name="exercise_0">
+        Lämmittely: 15 min soutulaite \n
+        Liike 1   Polvien ojennuslaite (etureidet)\n
+        1.	Säädä selkänoja siten, että polvitaive ei paina penkin reunaan. Säädä alempi rulla säärien alaosaan. Aloitus asennossa jalat ovat hieman penkin alapuolella. \n
+        2.	Ojenna jalat vaakatasoon ja palauta hallitusti aloitusasentoon. \n
+        Sarjat 3 , toistot 12 -15 ja vastus kevyt. Lepo 1 min. \n \n
+
+        Liike 2  Kapea soutuliike alataljassa ( yläselkä)\n
+        1.	Istu penkille polvet kiinni eturulliin ja kurotu kahvaan käsillä. \n
+        2.	Aloita liike vetämällä olkapäitä taakse ja lopuksi rutista lapaluita yhteen. Pidä hartiat alhaalla koko ajan. \n
+        3.	Palauta hallitusti aloitusasentoon. \n
+        Sarjat 3, toistot 12-15 ja vastus kevyt. Lepo 1min. \n\n
+
+        Liike 3  Polvien koukistuslaite ( takareidet) \n
+        1.	Säädä selkänoja siten, että ylin rulla ei paina polvia. Alin rulla on pohkeen alaosassa. Nosta jalat vaakatasoon aloitusasentoon. \n
+        2.	Koukista jalkoja kohti penkin alaosaa ja palauta hallitusti ylös. \n
+        Sarjat 3 , toistot 12-15 ja vastus kevyt. Lepo 1min. \n\n
+
+        Liike 4  Rintalaite  ( rintalihakset) \n
+        1.	Säädä penkin korkeus siten, että kätesi ovat kahvoista kiinnipitäessä hartioiden tasossa . Säädä liikeradan laajuus kapeahkoksi. \n
+        2.	Purista kädet yhteen vartalon edessä ja pidä kyynärpäät hieman koukussa liikkeen ajan. Palauta hallitusti. \n
+        Sarjat 3 , toistot 12-15 ja vastus kevyt. Lepo 1min. \n\n
+
+        Liike 5  Vartalonkiertolaite ( vinot vatsalihakset) \n
+        1.	Säädä penkin korkeus siten, että olkapäät ovat etutyynyjen tasolla. Istu penkille ja purista polvia alatyynyjä vasten. Säädä aloitusasento noin 45 asteen kulmaan. \n
+        2.	Kierrä alavartaloa toiseen suuntaan ja pidä ylävartalo paikoillaan. Tee liike vatsalihaksilla ei käsillä. Muista jarruttaa palautuksessa. \n
+        sarjat 2 , toistot 12-15 + 12-15 ja vastus kevyt. Lepo 1min. \n
+    </string>
+    <string name="exercise_1">
+        Lämmittely : 15 min crosstrainer \n
+        Liike 1  Vaakaprässi (etureidet, takareidet, loitontajat ja pakara) \n
+        1.	Laita levypainot laitteeseen. Istu penkille siten, että selkä on hyvin nojaa vasten ja pakarat kiinni penkissä. Nosta jalat  lantiota hieman leveämpään asentoon laudalle. Pidä kantapäät kiinni alustassa koko liikkeen ajan. \n
+        2.	Työnnä jalat lähes suoraksi ja päästä lukko pois. Koukista jalat lähelle kehoa ja työnnä takaisin lähes suoraksi. Muista laittaa lukko päälle , kun olet tehnyt sarjasi. \n
+        Sarjat 3 , toistot 12-15 ja vastus keskiraskas -kevyt. Lepo 1 min. \n\n
+
+        Liike 2  Askelkyykky smith-laitteessa (pakarat) \n
+        1.	Laita levypainot laitteeseen. \n
+        2.	Asetu siten, että tanko on hartioiden takana ei niskassa. \n
+        Vie toinen jalka pitkälle eteen ja toinen taakse. Käännä tangon koukut aukiasentoon taaksepäin. \n
+        3.	Kyykkää alas pitäen etummainen polvi jalkaterän kanssa samassa linjassa ja suuntaa taaempaa polvea kohti lattiaa. Nouse ylös painamalla etummaista kantapäätä lattiaan. \n
+        Sarjat 3 , toistot 12-15 + 12-15 ja vastus kevyt. Lepo 1min. \n\n
+
+        Liike 3  Selän ojennus vinopenkissä (pakarat , takareidet, alaselkä) \n
+        1.	Säädä penkki siten, että reitesi ovat penkkiä vasten ja lantio hieman penkin reunan yläpuolella. \n
+        2.	Kallista ylävartaloa alas kunnes tunnet venytyksen takareidessä. \n
+        3.	Puristaen pakaraa nouse takaisin aloitusasentoon. \n
+        Sarjat 3 , toistot 12-15 ja vastus kehonpaino. Lepo 1 min. \n\n
+
+        Liike 4  Pohjelaite (pohkeet) \n
+        1.	Laita levypainot laitteeseen. Istu penkille ja vedä tuet reisien päälle. Voit säätää tukea sopivaksi ettei paina polvien päälle. Aseta päkiät alaraudalle ja nosta kantapäät ylös. Vedä lukko aukiasentoon sivulle. \n
+        2.	Tee liike laskien kantapäitä niin alas, että tunnet venytyksen ja ponnista takaisin kannat ylös. \n
+        3.	Sarjan tehtyäsi laita lukko takaisin päälle. \n
+        Sarjat 3 , toistot 12-15 ja vastus kevyt. Lepo 1 min. \n\n
+
+        Liike 5  Vatsan rutistus laitteessa (suorat vatsalihakset) \n
+        1.	Laita levypaino laitteeseen taakse. \n
+        2.	Istu ja laita jalat alarullien taakse, paina pää tukeen kiinni ja tartu kahvoista käsillä. \n
+        3.	Nosta jaloilla ja vedä käsillä, että saat laitteen liikkeelle. Keskity sitten tekemään liike jännittäen vatsalihaksia ja muista hengittää ulos rutistaessa ja pitää pää tuessa kiinni koko liikkeen ajan. \n
+        Sarjat 3 , toistot 12-15 , vastus kevyt-keskiraskas. Lepo 1min.
+    </string>
     <string name="profile_email">Sähköposti</string>
 
     <string name="default_text">Default</string>

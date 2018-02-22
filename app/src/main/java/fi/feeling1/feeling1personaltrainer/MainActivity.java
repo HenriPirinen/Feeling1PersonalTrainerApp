@@ -102,13 +102,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        Bundle bundle = new Bundle();
         Fragment fragment = null;
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
             fragment = new FragmentProfile();
         } else if (id == R.id.nav_exercise) {
+            bundle.putString("condition", "exercises");
             fragment = new Fragment_exercise();
+            fragment.setArguments(bundle);
         } else if (id == R.id.nav_stretching) {
             /*Intent profileIntent = new Intent(this, ProfileActivity.class);
             startActivity(profileIntent);*/

@@ -18,6 +18,7 @@ import java.util.List;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
 
         private List<ListData> exerciseList;
+        private String condition;
         public Context context;
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -35,8 +36,9 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             }
         }
 
-        public ListAdapter(List<ListData> exerciseList) {
+        public ListAdapter(List<ListData> exerciseList, String CONDITION) {
             this.exerciseList = exerciseList;
+            condition = CONDITION;
         }
 
     @Override
@@ -57,16 +59,157 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(context, ExerciseActivity.class);
-                switch (holder.getAdapterPosition())
-                {
-                    case 0:
-                        intent.putExtra("content","Harjoitus 1");
+
+                switch (condition) {
+                    case "exercises":
+                        intent = new Intent(context, ExerciseActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Perusohjelma aloittelijalle");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Alavartalon kuntosaliohjelma");
+                                break;
+                            default:
+                                intent.putExtra("content","Harjoitus 0");
+                                break;
+                        }
                         break;
-                    case 1:
-                        intent.putExtra("content","Harjoitus 2");
+                    case "chest":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
                         break;
-                    default:
-                        intent.putExtra("content","Harjoitus 0");
+                    case "back":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "legs":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "biceps":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "triceps":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "shoulders":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "abdominals":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "forearms":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
+                        break;
+                    case "glutes":
+                        intent = new Intent(context, EquipmentActivity.class);
+                        switch (holder.getAdapterPosition())
+                        {
+                            case 0:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            case 1:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                            default:
+                                intent.putExtra("content","Smith-laite");
+                                break;
+                        }
                         break;
                 }
                 context.startActivity(intent);
